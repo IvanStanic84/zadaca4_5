@@ -1,5 +1,5 @@
 # hash 
-# C:\xampp\mysql\bin\mysql -uroot < C:\Users\Korisnik\Documents\GitHub\Pocetak\edunovajp26ST2.sql
+# C:\xampp\mysql\bin\mysql -uroot < C:\Users\Korisnik\Documents\GitHub\zadaca4_5\edunovajp26ST2.sql
 
 drop database if exists edunovajp26ST2;
 create database edunovajp26ST2;
