@@ -39,3 +39,10 @@ create table salon(
 
 alter table salon add foreign key (djelatnica) references djelatnica(sifra);
 alter table korisnik add foreign key (usluga) references usluga(sifra);
+
+# unos podataka
+insert into usluga (vrsta, cijena, vrijeme)
+values ('Manikura', 100, 30);
+
+insert into djelatnica (ime, smjena, brojkorisnika)
+values ('Marija', 'Prva smjena', 7);
