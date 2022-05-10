@@ -34,3 +34,8 @@ create table salon(
     promet decimal(10,2),
     djelatnica int not null 
 );
+
+# definiranje vanjskih ključeva
+
+alter table salon add foreign key (djelatnica) references djelatnica(sifra);
+alter table korisnik add foreign key (usluga) references usluga(sifra);
