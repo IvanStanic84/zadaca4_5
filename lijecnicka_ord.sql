@@ -7,8 +7,8 @@ use lijecnicka_ord;
 create table lijecnik(
     sifra int not null primary key auto_increment,
     ime varchar(50) not null,
-    titula varchar(50)not null,
-    specijalizacija varchar(50) not null
+    titula varchar(50) null,
+    specijalizacija varchar(50)
 );
 
 create table ordinacija(
@@ -24,7 +24,7 @@ create table pacijent(
     mbo char(9) not null,
     ime varchar(50),
     prezime varchar(50),
-    pregled int not null
+    pregled int
 );
 
 create table pregled(
@@ -41,4 +41,15 @@ create table pregled(
 alter table ordinacija add foreign key (lijecnik) references lijecnik(sifra);
 alter table pregled add foreign key (lijecnik) references lijecnik(sifra);
 alter table pacijent add foreign key (pregled) references pregled(sifra);
+
+# unos podataka
+
+insert into pacijent (mbo, ime)
+values (012345678, 'pero');
+
+insert into lijecnik (ime)
+values ('Pero Peric');
+
+insert into pregled (vrsta, cijena, lijecnik)
+values ('gastro', 200, 1);
 
