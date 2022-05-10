@@ -16,7 +16,7 @@ create table korisnik(
     sifra int not null primary key auto_increment,
     spol varchar(50),
     smjena varchar(50),
-    usluga varchar(50) not null,
+    usluga int not null,
     novac decimal (10,2)
 );
 
@@ -34,3 +34,9 @@ create table salon(
     promet decimal(10,2),
     djelatnica int not null 
 );
+
+
+# definiranje vanjskih ključeva
+
+alter table salon add foreign key (djelatnica) references djelatnica(sifra);
+alter table korisnik add foreign key (usluga) references usluga(sifra);
