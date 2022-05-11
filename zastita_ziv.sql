@@ -28,4 +28,7 @@ create table sticenik(
     udruga int not null
 );
 
+# definiranje vanjskih ključeva
 
+alter table clanudruge add foreign key (udruga) references udruga(sifra);
+alter table sticenik add foreign key (udruga) references udruga(sifra);
