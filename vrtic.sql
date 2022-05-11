@@ -7,14 +7,14 @@ use vrtic;
 
 create table ustanova(
     sifra int not null primary key auto_increment,
-    naziv varchar(50),
+    naziv varchar(50) not null,
     adresa varchar(50),
     ravnateljica varchar(50)
 );
 
 create table odgojnaskupina(
     sifra int not null primary key auto_increment,
-    naziv varchar(50),
+    naziv varchar(50) not null,
     voditeljica int not null,
     brojpolaznika int,
     dobdjece varchar(50)
@@ -22,15 +22,16 @@ create table odgojnaskupina(
 
 create table voditeljica(
     sifra int not null primary key auto_increment,
-    imeprezime varchar(50),
+    imeprezime varchar(50) not null,
+    oib char(11),
     radnoiskustvo datetime,
     strucnasprema varchar(50)
 );
 
 create table korisnik(
     sifra int not null primary key auto_increment,
-    imeprezime varchar(50),
-    oib char(11),
+    imeprezime varchar(50) not null,
+    oib char(11) not null,
     imeoca varchar(50),
     imemajke varchar(50),
     odgojnaskupina int not null
@@ -40,3 +41,14 @@ create table korisnik(
 
 alter table korisnik add foreign key (odgojnaskupina) references odgojnaskupina(sifra);
 alter table odgojnaskupina add foreign key (voditeljica) references voditeljica(sifra);
+
+# unos podataka
+
+insert into ustanova (naziv)
+values ('Bubamara');
+
+insert into voditeljica (imeprezime, oib)
+values ('Tea Marić', 01234567891);
+
+insert into odgojnaskupina (naziv, voditeljica, brojpolaznika)
+values ('Popišanci', 1, 18);
