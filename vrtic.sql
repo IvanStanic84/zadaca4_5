@@ -35,3 +35,8 @@ create table korisnik(
     imemajke varchar(50),
     odgojnaskupina int not null
 );
+
+# definiranje vanjskih ključeva
+
+alter table korisnik add foreign key (odgojnaskupina) references odgojnaskupina(sifra);
+alter table odgojnaskupina add foreign key (voditeljica) references voditeljica(sifra);
