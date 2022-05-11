@@ -1,5 +1,5 @@
 
-# C:\xampp\mysql\bin\mysql -uroot < C:\Users\Korisnik\Documents\GitHub\zadaca4_5\vrtic.sql
+# C:\xampp\mysql\bin\mysql -uroot --default_character_set=utf8 < C:\Users\Korisnik\Documents\GitHub\zadaca4_5\vrtic.sql
 
 drop database if exists vrtic;
 create database vrtic;
@@ -17,7 +17,7 @@ create table odgojnaskupina(
     naziv varchar(50),
     voditeljica int not null,
     brojpolaznika int,
-    dobdjece varchar(50),
+    dobdjece varchar(50)
 );
 
 create table voditeljica(
@@ -29,7 +29,7 @@ create table voditeljica(
 
 create table korisnik(
     sifra int not null primary key auto_increment,
-    imeprezime varchar(),
+    imeprezime varchar(50),
     oib char(11),
     imeoca varchar(50),
     imemajke varchar(50),
