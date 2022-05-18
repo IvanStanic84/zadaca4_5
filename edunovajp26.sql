@@ -158,14 +158,40 @@ update grupa set predavac=1 where sifra=1;
 
 delete from smjer where sifra=3;
 
-# DZ
-# Unesite sebe kao predavača
 
-# Unijeti smjer Tehničar za mrežu
+# Unesite sebe kao predavača
+# 3
+
+insert into  predavac(sifra, osoba, iban)
+values (null, 11 ,null);
+
+# Unijeti smjer Tehničar za mrežu 
+# 4
+
+insert into smjer (sifra,naziv,trajanje,cijena,upisnina,certificiran)
+values (null, 'Tehničar za mrežu', 150, 7500, 600, true);
+
 
 # Sebi kao predavaču promjeniti iban
+update predavac set
+iban='715566734'
+where sifra =3;
 
 # Unijeti svoju užu rodbinu za polaznike
 
+insert into osoba (sifra,ime,prezime,oib,email) 
+values (null, 'Sofija', 'Stanić', null, 'sofija@gmail.com'),
+       (null, 'Leon', 'Stanić', null, 'leon@gmail.com'),
+       (null, 'Tea', 'Stanić', null, 'tea@gmail.com'),
+       (null, 'Astra', 'Stanić', null, 'astra@gmail.com');
+    
+insert into polaznik (sifra,osoba,brojugovora)
+values (null,15,null),(null,16,null),(null,17,null),(null,18,null);
+
 # pola rodbine upisati na JP26 a drugu
 # polovicu na PP25
+insert into clan (sifra,grupa,polaznik)
+values (null,1,13),(null,1,14),(null,2,15),(null,2,16);
+
+# povećati cijenu za 10%
+update smjer set cijena=cijena * 1.10;
